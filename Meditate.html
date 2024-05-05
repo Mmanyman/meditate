@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MEDITATE</title>
+    <script>
+    function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = 0;     
+        }
+    }, 1000);
+    }
+    </script>
+    <style>
+    body {
+        padding: 180px;
+        background-color: bisque;
+        vertical-align: middle;
+    }
+    h1 {
+        text-align: center;
+        size: 50px;
+    }
+    #text{
+        text-align: center;
+    }
+    div {
+        text-align: center;
+        vertical-align: middle;
+    }
+    #TimerDisplay {
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    button {
+        color: #000000; 
+        font-size: 24px; 
+        line-height: 24px; 
+        padding: 15px; 
+        border-radius: 28px; 
+        font-family: Georgia, serif; 
+    }     
+    </style>
+</head>
+<body>
+    <h1>MEDITATE</h1>
+    <p id="text">Meditate for 5 minutes to clear your head and make yourself feel better.</p>
+    <div>
+    <p id="TimerDisplay">05:00</p>
+    <button onclick="startTimer(300, document.getElementById('TimerDisplay'))" >START</button>
+    </div>
+</body>
+</html
